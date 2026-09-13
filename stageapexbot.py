@@ -1,11 +1,13 @@
 import os
 import requests
 from telebot import TeleBot
+from huggingface_hub import InferenceClient
 
 TOKEN = "8998319147:AAEMBPz3apnk8tw2vQEtono9M07Idr8YKvE"
 HF_TOKEN = "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" 
 
 bot = TeleBot(TOKEN)
+client = InferenceClient(api_key=HF_TOKEN)
 
 CUSTOM_PROMPT = (
     "Transform the motorcycle from the photo into a supermoto. "
@@ -29,49 +31,36 @@ def handle_photo(message):
     output_path = f"output_{message.chat.id}.jpg"
     
     try:
-        # 1. Скачиваем фото от пользователя
+        # Скачиваем фото от пользователя
         photo_file_info = bot.get_file(message.photo[-1].file_id)
         downloaded_file = bot.download_file(photo_file_info.file_path)
         
         with open(input_path, 'wb') as f:
             f.write(downloaded_file)
             
-        # 2. Используем модель instruct-pix2pix для редактирования по фото и промпту
-                # 2. Используем современный эндпоинт Hugging Face Router
-        api_img2img_url = "https://router.huggingface.co/hf-inference/models/timbrooks/instruct-pix2pix"
-
-        
+        # Используем официальный клиент для Instruct-Pix2Pix
         with open(input_path, "rb") as f:
-            response = requests.post(
-                api_img2img_url,
-                headers={"Authorization": f"Bearer {HF_TOKEN}"},
-                files={"image": f},
-                data={"inputs": CUSTOM_PROMPT}
-            )
-
-        # Проверяем успешность ответа (сервер возвращает картинку или ошибку)
-        content_type = response.headers.get("content-type", "")
-        if response.status_code == 200 and "image" in content_type:
-            with open(output_path, "wb") as out:
-                out.write(response.content)
+            image_bytes = f.read()
+            
+        # Запрос через новый шлюз Hugging Face Inference Providers
+        image_response = client.image_to_image(
+            image=image_bytes,
+            prompt=CUSTOM_PROMPT,
+            model="timbrooks/instruct-pix2pix"
+        )
+        
+        # Сохраняем результат
+        image_response.save(output_path)
                 
-            with open(output_path, "rb") as photo_to_send:
-                bot.send_photo(message.chat.id, photo_to_send, caption="🔥 Готово! Лови мотард.")
-                
-            os.remove(output_path)
-        else:
-            # Если модель прогревается (ошибка 503 или JSON с предупреждением)
-            bot.edit_message_text(
-                "⚠️ Нейросеть на сервере «просыпается» (модель загружается). Попробуй отправить фото еще раз через 20-30 секунд.", 
-                message.chat.id, 
-                sent_msg.message_id
-            )
+        with open(output_path, "rb") as photo_to_send:
+            bot.send_photo(message.chat.id, photo_to_send, caption="🔥 Готово! Лови мотард.")
+            
+        os.remove(output_path)
             
     except Exception as e:
         bot.reply_to(message, f"Ошибка выполнения: {e}")
         
     finally:
-        # Гарантированно удаляем входной файл, если он остался
         if os.path.exists(input_path):
             os.remove(input_path)
 
