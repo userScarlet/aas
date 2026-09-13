@@ -37,7 +37,9 @@ def handle_photo(message):
             f.write(downloaded_file)
             
         # 2. Используем модель instruct-pix2pix для редактирования по фото и промпту
-        api_img2img_url = "https://api-inference.huggingface.co/models/timbrooks/instruct-pix2pix"
+                # 2. Используем современный эндпоинт Hugging Face Router
+        api_img2img_url = "https://router.huggingface.co/hf-inference/models/timbrooks/instruct-pix2pix"
+
         
         with open(input_path, "rb") as f:
             response = requests.post(
