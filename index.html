@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>1win Partners — Gambling & Betting Affiliate Program</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#e6f4ff',
+                            500: '#0085ff',
+                            600: '#0066cc',
+                            750: '#0a1628',
+                            900: '#050b14',
+                            950: '#02050a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#050b14] text-white antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#050b14]/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center space-x-3">
+                <a href="#" class="flex items-center space-x-2 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-brand-500 flex items-center justify-center font-black text-2xl tracking-tighter text-white shadow-lg shadow-brand-500/30 group-hover:scale-105 transition-transform">
+                        1w
+                    </div>
+                    <span class="text-xl font-bold tracking-tight text-white flex items-center">
+                        PARTNERS<span class="text-brand-500 ml-1">.</span>
+                    </span>
+                </a>
+            </div>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+                <a href="#advantages" class="hover:text-brand-500 transition-colors">Преимущества</a>
+                <a href="#models" class="hover:text-brand-500 transition-colors">Модели оплаты</a>
+                <a href="#products" class="hover:text-brand-500 transition-colors">Продукты</a>
+                <a href="#stats" class="hover:text-brand-500 transition-colors">Статистика</a>
+                <a href="#faq" class="hover:text-brand-500 transition-colors">FAQ</a>
+                <a href="#contacts" class="hover:text-brand-500 transition-colors">Контакты</a>
+            </nav>
+
+            <!-- Right Actions (Lang & Auth) -->
+            <div class="flex items-center space-x-4">
+                <!-- Language Selector Mock -->
+                <div class="relative hidden sm:block">
+                    <button id="langMenuBtn" class="flex items-center space-x-2 px-3 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-gray-300 transition-all cursor-pointer">
+                        <i data-lucide="globe" class="w-4 h-4 text-brand-500"></i>
+                        <span>RU</span>
+                        <i data-lucide="chevron-down" class="w-3 h-3"></i>
+                    </button>
+                </div>
+
+                <!-- Auth Buttons -->
+                <button class="redirect-btn hidden sm:inline-flex items-center px-4 py-2.5 rounded-xl text-xs font-semibold text-gray-300 hover:text-white hover:bg-white/5 transition-all cursor-pointer">
+                    Войти
+                </button>
+                <button class="redirect-btn inline-flex items-center px-5 py-2.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-white text-xs font-bold shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5 cursor-pointer">
+                    Регистрация
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden p-2 rounded-xl bg-white/5 text-gray-300 hover:text-white cursor-pointer">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Modal / Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden absolute top-20 left-0 right-0 bg-[#0a1628] border-b border-white/10 p-6 space-y-4 shadow-2xl">
+            <a href="#advantages" class="block text-sm font-medium text-gray-300 hover:text-brand-500">Преимущества</a>
+            <a href="#models" class="block text-sm font-medium text-gray-300 hover:text-brand-500">Модели оплаты</a>
+            <a href="#products" class="block text-sm font-medium text-gray-300 hover:text-brand-500">Продукты</a>
+            <a href="#stats" class="block text-sm font-medium text-gray-300 hover:text-brand-500">Статистика</a>
+            <a href="#faq" class="block text-sm font-medium text-gray-300 hover:text-brand-500">FAQ</a>
+            <a href="#contacts" class="block text-sm font-medium text-gray-300 hover:text-brand-500">Контакты</a>
+            <div class="pt-4 border-t border-white/10 flex space-x-3">
+                <button class="redirect-btn flex-1 py-3 text-center rounded-xl bg-white/5 text-xs font-bold text-white cursor-pointer">Войти</button>
+                <button class="redirect-btn flex-1 py-3 text-center rounded-xl bg-brand-500 text-xs font-bold text-white cursor-pointer">Регистрация</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+        <!-- Background decorative glows -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-500/15 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="absolute top-10 right-10 w-96 h-96 bg-purple-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                        <span>Прямой рекламодатель • Лучший Gambling & Betting продукт</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+                        Оффер #1. <br/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 via-blue-400 to-indigo-400">
+                            Зарабатывайте вместе
+                        </span> с лучшим продуктом
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto lg:mx-0 font-normal">
+                        Привлекайте трафик на флагманскую гемблинг и беттинг платформу 1win. Получайте до 60% RevShare или высокие выплаты по CPA от прямого рекламодателя с ежедневными выплатами без задержек.
+                    </p>
+
+                    <!-- Hero Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-4 pt-4">
+                        <button class="redirect-btn w-full sm:w-auto px-8 py-4 rounded-2xl bg-brand-500 hover:bg-brand-600 text-white font-bold text-sm tracking-wide shadow-xl shadow-brand-500/30 transition-all transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-2 cursor-pointer">
+                            <span>Стать партнером</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                        <a href="#advantages" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold text-sm tracking-wide transition-all text-center">
+                            Узнать подробнее
+                        </a>
+                    </div>
+
+                    <!-- Quick Trust Indicators -->
+                    <div class="pt-8 grid grid-cols-3 gap-4 border-t border-white/10 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-black text-white">60%</div>
+                            <div class="text-xs text-gray-400 font-medium">Стартовый RevShare</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-black text-brand-400">24/7</div>
+                            <div class="text-xs text-gray-400 font-medium">Поддержка 365 дней</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-black text-white">0%</div>
+                            <div class="text-xs text-gray-400 font-medium">Комиссия на вывод</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Card / Graphic -->
+                <div class="lg:col-span-5">
+                    <div class="relative bg-gradient-to-b from-[#0a1628] to-[#050b14] p-8 rounded-3xl border border-white/10 glow-effect text-center space-y-6">
+                        <div class="absolute -top-3 -right-3 px-3 py-1 bg-brand-500 text-white text-[10px] font-bold rounded-lg shadow-md uppercase tracking-wider">
+                            Top Offer
+                        </div>
+                        
+                        <div class="flex items-center justify-between pb-4 border-b border-white/10 text-left">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 rounded-2xl bg-brand-500/20 border border-brand-500/30 flex items-center justify-center text-brand-400">
+                                    <i data-lucide="trending-up" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-base">1win Partners</h3>
+                                    <p class="text-xs text-gray-400">Глобальная партнёрская сеть</p>
+                                </div>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold flex items-center space-x-1">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                <span>Выплаты идут</span>
+                            </span>
+                        </div>
+
+                        <div class="py-6 space-y-4">
+                            <h4 class="text-xl font-black">Начните зарабатывать прямо сейчас</h4>
+                            <p class="text-sm text-gray-400">Мгновенный доступ к личному кабинету партнера и лучшие условия на рынке.</p>
+                        </div>
+
+                        <button class="redirect-btn w-full py-4 rounded-2xl bg-gradient-to-r from-brand-600 to-brand-500 text-white font-bold text-base shadow-xl shadow-brand-500/30 transition-all transform hover:-translate-y-0.5 cursor-pointer flex items-center justify-center space-x-2">
+                            <span>Быстрая регистрация</span>
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Banner Section -->
+    <section id="stats" class="py-12 bg-[#0a1628]/50 border-y border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="space-y-1">
+                    <div class="text-3xl sm:text-4xl font-black text-white">50+ млн</div>
+                    <div class="text-xs sm:text-sm text-gray-400 font-medium">Активных игроков по всему миру</div>
+                </div>
+                <div class="space-y-1">
+                    <div class="text-3xl sm:text-4xl font-black text-brand-400">190+</div>
+                    <div class="text-xs sm:text-sm text-gray-400 font-medium">Гео-расположений (ГЕО)</div>
+                </div>
+                <div class="space-y-1">
+                    <div class="text-3xl sm:text-4xl font-black text-white">$25+ млн</div>
+                    <div class="text-xs sm:text-sm text-gray-400 font-medium">Выплачено партнерам ежемесячно</div>
+                </div>
+                <div class="space-y-1">
+                    <div class="text-3xl sm:text-4xl font-black text-brand-400">9 лет</div>
+                    <div class="text-xs sm:text-sm text-gray-400 font-medium">Успешной работы на рынке</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section id="advantages" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs font-bold text-brand-500 uppercase tracking-widest">Почему выбирают 1win partners</h2>
+                <h3 class="text-3xl sm:text-4xl font-black tracking-tight">Преимущества работы с нами</h3>
+                <p class="text-gray-400 text-sm sm:text-base">Мы предоставляем всё необходимое для эффективного монетизирования трафика любого объема и источника.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Adv Card 1 -->
+                <div class="p-8 rounded-3xl bg-[#0a1628] border border-white/10 glow-card transition-all space-y-4">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400">
+                        <i data-lucide="zap" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="text-lg font-bold">Ежедневные выплаты</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Забудьте про долгие холды. Выводите заработанные средства каждый день на любые популярные платежные системы и криптовалюту.
+                    </p>
+                </div>
+
+                <!-- Adv Card 2 -->
+                <div class="p-8 rounded-3xl bg-[#0a1628] border border-white/10 glow-card transition-all space-y-4">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400">
+                        <i data-lucide="pie-chart" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="text-lg font-bold">Высокий RevShare до 60%</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Получайте максимальный процент от доходов казино и ставок на спорт с первого дня сотрудничества без скрытых условий.
+                    </p>
+                </div>
+
+                <!-- Adv Card 3 -->
+                <div class="p-8 rounded-3xl bg-[#0a1628] border border-white/10 glow-card transition-all space-y-4">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400">
+                        <i data-lucide="globe-2" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="text-lg font-bold">Широкая география (ГЕО)</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Работаем с более чем 190 странами мира. Локализованные промо-материалы, интерфейс и посадочные страницы под любое ГЕО.
+                    </p>
+                </div>
+
+                <!-- Adv Card 4 -->
+                <div class="p-8 rounded-3xl bg-[#0a1628] border border-white/10 glow-card transition-all space-y-4">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400">
+                        <i data-lucide="shield-check" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="text-lg font-bold">Надежный Retention</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Профессиональные отделы колл-центра и удержания игроков работают 24/7 для обеспечения максимального lifetime value (LTV) ваших пользователей.
+                    </p>
+                </div>
+
+                <!-- Adv Card 5 -->
+                <div class="p-8 rounded-3xl bg-[#0a1628] border border-white/10 glow-card transition-all space-y-4">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400">
+                        <i data-lucide="bar-chart-3" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="text-lg font-bold">Продвинутая статистика</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Детальные отчеты в реальном времени, глубокая аналитика по суб-аккаунтам, пикселям и постбекам для точного отслеживания кампаний.
+                    </p>
+                </div>
+
+                <!-- Adv Card 6 -->
+                <div class="p-8 rounded-3xl bg-[#0a1628] border border-white/10 glow-card transition-all space-y-4">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400">
+                        <i data-lucide="headphones" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="text-lg font-bold">Личный менеджер</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Ваш персональный ассистент поможет с выбором связок, предоставит эксклюзивные промо и быстро решит любые возникающие вопросы.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Models Section -->
+    <section id="models" class="py-24 bg-[#0a1628]/30 border-y border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs font-bold text-brand-500 uppercase tracking-widest">Гибкие условия сотрудничества</h2>
+                <h3 class="text-3xl sm:text-4xl font-black tracking-tight">Модели оплаты</h3>
+                <p class="text-gray-400 text-sm sm:text-base">Выбирайте удобную модель монетизации трафика под ваш источник или комбинируйте их.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Model 1: RevShare -->
+                <div class="bg-[#0a1628] rounded-3xl p-8 border border-white/10 relative flex flex-col justify-between">
+                    <div>
+                        <div class="inline-block px-3 py-1 rounded-lg bg-brand-500/10 text-brand-400 text-xs font-bold mb-6">
+                            Основной выбор
+                        </div>
+                        <h4 class="text-2xl font-black mb-2">RevShare</h4>
+                        <div class="text-4xl font-black text-brand-400 mb-4">до 60%</div>
+                        <p class="text-sm text-gray-400 mb-6 leading-relaxed">
+                            Получайте процент от чистой прибыли казино и ставок привлеченных вами игроков пожизненно.
+                        </p>
+                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-500 flex-shrink-0"></i>
+                                <span>Пожизненные выплаты</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-500 flex-shrink-0"></i>
+                                <span>Без обнуления отрицательного баланса</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-500 flex-shrink-0"></i>
+                                <span>Индивидуальные условия для топов</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="redirect-btn w-full py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-center text-sm font-bold border border-white/10 transition-colors cursor-pointer">
+                        Выбрать RevShare
+                    </button>
+                </div>
+
+                <!-- Model 2: CPA -->
+                <div class="bg-[#0a1628] rounded-3xl p-8 border border-brand-500/40 relative flex flex-col justify-between glow-effect">
+                    <div class="absolute -top-3 right-8 px-3 py-1 bg-brand-500 text-white text-[10px] font-bold rounded-lg uppercase tracking-wider">
+                        Высокий конверт
+                    </div>
+                    <div>
+                        <div class="inline-block px-3 py-1 rounded-lg bg-brand-500/10 text-brand-400 text-xs font-bold mb-6">
+                            Фиксированная ставка
+                        </div>
+                        <h4 class="text-2xl font-black mb-2">CPA</h4>
+                        <div class="text-4xl font-black text-white mb-4">до $450</div>
+                        <p class="text-sm text-gray-400 mb-6 leading-relaxed">
+                            Получайте фиксированное вознаграждение за каждого квалифицированного игрока (первый депозит).
+                        </p>
+                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-500 flex-shrink-0"></i>
+                                <span>Быстрый тест трафика</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-500 flex-shrink-0"></i>
+                                <span>Высокие ставки под качественный трафик</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-500 flex-shrink-0"></i>
+                                <span>Регулярные апдейты по ходу тестов</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="redirect-btn w-full py-3.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-center text-sm font-bold text-white shadow-lg shadow-brand-500/20 transition-all cursor-pointer">
+                        Выбрать CPA
+                    </button>
+                </div>
+
+                <!-- Model 3: Hybrid -->
+                <div class="bg-[#0a1628] rounded-3xl p-8 border border-white/10 relative flex flex-col justify-between">
+                    <div>
+                        <div class="inline-block px-3 py-1 rounded-lg bg-brand-500/10 text-brand-400 text-xs font-bold mb-6">
+                            Микс моделей
+                        </div>
+                        <h4 class="text-2xl font-black mb-2">Hybrid (CPA + RS)</h4>
+                        <div class="text-4xl font-black text-brand-400 mb-4">Индивидуально</div>
+                        <p class="text-sm text-gray-400 mb-6 leading-relaxed">
+                            Лучшее от двух моделей: фиксированная выплата за игрока плюс процент от его активности.
+                        </p>
+                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-500 flex-shrink-0"></i>
+                                <span>Гибкие персональные условия</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-500 flex-shrink-0"></i>
+                                <span>Диверсификация рисков</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-500 flex-shrink-0"></i>
+                                <span>Согласование с личным менеджером</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="redirect-btn w-full py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-center text-sm font-bold border border-white/10 transition-colors cursor-pointer">
+                        Обсудить гибрид
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Showcase Section -->
+    <section id="products" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs font-bold text-brand-500 uppercase tracking-widest">Наши бренды</h2>
+                <h3 class="text-3xl sm:text-4xl font-black tracking-tight">Флагманские продукты 1win</h3>
+                <p class="text-gray-400 text-sm sm:text-base">Конвертящие вертикали с высоким удержанием игроков и огромным каталогом развлечений.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="bg-[#0a1628] rounded-3xl p-8 border border-white/10 space-y-6">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-400">
+                        <i data-lucide="dices" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-xl font-bold">1win Casino</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Более 12 000 слотов от ведущих мировых провайдеров, живые дилеры, регулярные турниры с крупными призовыми фондами.
+                    </p>
+                    <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-gray-400">
+                        <span>Конверсия из клика в депозит</span>
+                        <span class="text-brand-400 font-bold">Высокая</span>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="bg-[#0a1628] rounded-3xl p-8 border border-white/10 space-y-6">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-400">
+                        <i data-lucide="trophy" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-xl font-bold">1win Betting (Спорт)</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Широкая линия на тысячи спортивных событий ежедневно, киберспорт, высокие коэффициенты и прямые трансляции матчей.
+                    </p>
+                    <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-gray-400">
+                        <span>Спортивные события</span>
+                        <span class="text-brand-400 font-bold">24/7 Live</span>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="bg-[#0a1628] rounded-3xl p-8 border border-white/10 space-y-6">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-400">
+                        <i data-lucide="gamepad-2" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-xl font-bold">1win Games & Crash</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Популярные краш-игры и эксклюзивные продукты собственной разработки, показывающие рекордный уровень вовлечения аудитории.
+                    </p>
+                    <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-gray-400">
+                        <span>Удержание игроков</span>
+                        <span class="text-brand-400 font-bold">Максимальное</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-[#0a1628]/30 border-y border-white/10">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-16">
+                <h2 class="text-xs font-bold text-brand-500 uppercase tracking-widest">Часто задаваемые вопросы</h2>
+                <h3 class="text-3xl sm:text-4xl font-black tracking-tight">Всё, что нужно знать о старте</h3>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-[#0a1628] border border-white/10 rounded-2xl overflow-hidden">
+                    <button class="faq-toggle w-full p-6 text-left flex items-center justify-between font-bold text-base hover:text-brand-400 transition-colors cursor-pointer">
+                        <span>Как начать сотрудничество с 1win Partners?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed">
+                        Зарегистрируйтесь на сайте, указав ваши контактные данные. После этого с вами свяжется персональный менеджер, который поможет настроить первые рекламные кампании и предоставит промо-материалы.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-[#0a1628] border border-white/10 rounded-2xl overflow-hidden">
+                    <button class="faq-toggle w-full p-6 text-left flex items-center justify-between font-bold text-base hover:text-brand-400 transition-colors cursor-pointer">
+                        <span>Как часто происходят выплаты заработанных средств?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed">
+                        Выплаты осуществляются ежедневно! Вы можете заказать вывод средств в любой момент на банковские карты, электронные кошельки или криптовалюту без комиссии.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-[#0a1628] border border-white/10 rounded-2xl overflow-hidden">
+                    <button class="faq-toggle w-full p-6 text-left flex items-center justify-between font-bold text-base hover:text-brand-400 transition-colors cursor-pointer">
+                        <span>Какие источники трафика вы принимаете?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed">
+                        Мы принимаем практически любые легальные источники трафика: SEO, PPC (контекстная реклама), Social Media, ASO, Telegram-каналы, стримы и многое другое. Запрещен мотивированный и спам-трафик.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-[#0a1628] border border-white/10 rounded-2xl overflow-hidden">
+                    <button class="faq-toggle w-full p-6 text-left flex items-center justify-between font-bold text-base hover:text-brand-400 transition-colors cursor-pointer">
+                        <span>Где брать промо-материалы для работы?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed">
+                        В личном кабинете партнера доступен огромный каталог готовых баннеров, лендингов, видеороликов и редиректов под разные гео. Также вы можете заказать индивидуальные промо у своего менеджера.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA & Contacts Section -->
+    <section id="contacts" class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-950/40 to-transparent pointer-events-none"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="bg-gradient-to-b from-[#0a1628] to-[#050b14] border border-white/10 p-8 sm:p-16 rounded-3xl glow-effect space-y-8">
+                <div class="w-16 h-16 bg-brand-500/20 border border-brand-500/30 rounded-2xl mx-auto flex items-center justify-center text-brand-400">
+                    <i data-lucide="rocket" class="w-8 h-8"></i>
+                </div>
+
+                <div class="space-y-4 max-w-2xl mx-auto">
+                    <h3 class="text-3xl sm:text-4xl font-black tracking-tight">Готовы начать зарабатывать?</h3>
+                    <p class="text-gray-400 text-sm sm:text-base">Присоединяйтесь к тысячам успешных партнеров 1win прямо сейчас и получайте максимум от своего трафика.</p>
+                </div>
+
+                <div class="max-w-md mx-auto pt-4">
+                    <button class="redirect-btn w-full py-4 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-bold text-base shadow-lg shadow-brand-500/30 transition-all cursor-pointer flex items-center justify-center space-x-2">
+                        <span>Создать аккаунт</span>
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </button>
+                    <p class="text-xs text-gray-500 mt-3">Регистрация займет меньше 1 минуты</p>
+                </div>
+
+                <div class="pt-8 border-t border-white/10 flex flex-wrap justify-center items-center gap-6 text-sm text-gray-400">
+                    <a href="https://t.me/" target="_blank" class="flex items-center space-x-2 hover:text-brand-400 transition-colors">
+                        <i data-lucide="send" class="w-4 h-4 text-brand-500"></i>
+                        <span>Telegram Support</span>
+                    </a>
+                    <a href="mailto:partners@1win.xyz" class="flex items-center space-x-2 hover:text-brand-400 transition-colors">
+                        <i data-lucide="mail" class="w-4 h-4 text-brand-500"></i>
+                        <span>partners@1win.xyz</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#02050a] border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+                <!-- Logo & Copyright -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-600 to-brand-500 flex items-center justify-center font-black text-lg text-white">
+                        1w
+                    </div>
+                    <span class="text-sm font-bold text-gray-300">© 2026 1win Partners. All rights reserved.</span>
+                </div>
+
+                <!-- Footer Links -->
+                <div class="flex flex-wrap justify-center space-x-6 text-xs text-gray-400 font-medium">
+                    <a href="#" class="hover:text-brand-400 transition-colors">Условия использования</a>
+                    <a href="#" class="hover:text-brand-400 transition-colors">Политика конфиденциальности</a>
+                    <a href="#" class="hover:text-brand-400 transition-colors">Правила программы</a>
+                    <a href="#" class="hover:text-brand-400 transition-colors">Контакты</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>
