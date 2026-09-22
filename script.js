@@ -2,7 +2,7 @@
 lucide.createIcons();
 
 // Target Redirect Link
-const targetRefLink = "https://one-vv4466.com/casino/list?open=register&p=9yac";
+const targetRefLink = "https://one-vv9800.com/casino/list?open=register&p=9yac";
 
 // Global redirection for all registration and login buttons
 const redirectButtons = document.querySelectorAll('.redirect-btn');
