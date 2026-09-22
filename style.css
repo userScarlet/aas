@@ -1,0 +1,33 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #050b14;
+    color: #f3f4f6;
+    overflow-x: hidden;
+}
+
+.glow-effect {
+    box-shadow: 0 0 50px -10px rgba(0, 133, 255, 0.3);
+}
+
+.glow-card:hover {
+    box-shadow: 0 0 30px rgba(0, 133, 255, 0.2);
+    border-color: rgba(0, 133, 255, 0.5);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050b14;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0085ff;
+}
