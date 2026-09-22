@@ -1,4 +1,0 @@
-pyTelegramBotApi
-requests
-huggingface_hub
-
